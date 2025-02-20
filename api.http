@@ -2,6 +2,27 @@ POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
 {
-    "name": "Pedro Fortini",
-    "email": "pedro.fortini@email.com"
+    "name": "Indiquelson 3",
+    "email": "indi3@email.com",
+    "referrerId": "4853f511-09fc-4069-9ae9-79d91409a257"
 }
+
+###
+
+GET http://localhost:3333/invites/43e15ebb-2e57-4832-916b-c4f8011ba615
+
+###
+
+GET http://localhost:3333/subscribers/43e15ebb-2e57-4832-916b-c4f8011ba615/ranking/clicks
+
+###
+
+GET http://localhost:3333/subscribers/43e15ebb-2e57-4832-916b-c4f8011ba615/ranking/invites
+
+###
+
+GET http://localhost:3333/subscribers/43e15ebb-2e57-4832-916b-c4f8011ba615/ranking/position
+
+###
+
+GET http://localhost:3333/ranking

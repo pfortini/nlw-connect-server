@@ -9,7 +9,12 @@ import {
   validatorCompiler,
 } from 'fastify-type-provider-zod'
 import { env } from './env'
-import { subscribeToEventRoute } from './routes/subscribe-to-event-route'
+import { accessLinkRoute } from './routes/access-link-route'
+import { getClicksRoute } from './routes/get-clicks-route'
+import { getInvitesRoute } from './routes/get-invites-route'
+import { getRankingPositionRoute } from './routes/get-ranking-position-route'
+import { getRankingRoute } from './routes/get-ranking-route'
+import { subscribeRoute } from './routes/subscribe-route'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 app.setSerializerCompiler(serializerCompiler)
@@ -27,6 +32,11 @@ app.register(fastifySwagger, {
 })
 
 app.register(fastifySwaggerUi, { routePrefix: '/docs' })
-app.register(subscribeToEventRoute)
+app.register(subscribeRoute)
+app.register(accessLinkRoute)
+app.register(getClicksRoute)
+app.register(getInvitesRoute)
+app.register(getRankingPositionRoute)
+app.register(getRankingRoute)
 
 app.listen({ port: env.PORT }).then(() => console.log('Server running at port', env.PORT))
